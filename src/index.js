@@ -5,6 +5,8 @@ const HEIGHT = 600;
 const NOTES = ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'];
 const COLOR_INACTIVE = 0xffffff;
 const COLOR_ACTIVE = 0xff0000;
+const STRING_LENGTH = 0.8;
+const STRING_THICKNESS = 0.04;
 
 class MyGame extends Phaser.Scene {
   constructor() {
@@ -23,8 +25,8 @@ class MyGame extends Phaser.Scene {
       const rect = this.add.rectangle(
         WIDTH / 2,
         ((NOTES.length - i) * HEIGHT) / (NOTES.length + 1),
-        WIDTH * 0.8,
-        HEIGHT * 0.02,
+        WIDTH * STRING_LENGTH,
+        HEIGHT * STRING_THICKNESS,
         COLOR_INACTIVE,
       );
       rect.setInteractive();
@@ -51,9 +53,6 @@ class MyGame extends Phaser.Scene {
       sounds[i].stop();
       target.fillColor = COLOR_INACTIVE;
     });
-    // this.input.on('pointerdown', () => {
-    //   sounds[0].stop();
-    // });
   }
 }
 
