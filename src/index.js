@@ -7,6 +7,7 @@ const COLOR_INACTIVE = 0xffffff;
 const COLOR_ACTIVE = 0xff0000;
 const STRING_LENGTH = 0.8;
 const STRING_THICKNESS = 0.04;
+const FRET_COUNT = 24;
 
 class MyGame extends Phaser.Scene {
   constructor() {
@@ -21,6 +22,13 @@ class MyGame extends Phaser.Scene {
     });
   }
   create() {
+    document
+      .querySelector('body')
+      .insertAdjacentHTML(
+        'beforeend',
+        '<label><input type="checkbox" name="checked"/>Randomize frets</label>',
+      );
+    const chkRandom = document.querySelector('input');
     const shapes = NOTES.map((note, i) => {
       const rect = this.add.rectangle(
         WIDTH / 2,
@@ -44,7 +52,7 @@ class MyGame extends Phaser.Scene {
       if (!p.buttons) return;
       const i = shapes.indexOf(target);
       if (i < 0) return;
-      sounds[i].play();
+      sounds[i].play({ detune: chkRandom.checked ? Phaser.Math.Between(0, FRET_COUNT) * 100 : 0 });
       target.fillColor = COLOR_ACTIVE;
     });
     this.input.on('gameobjectup', (p, target) => {
