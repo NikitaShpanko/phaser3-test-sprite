@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikitashpanko/phaser3-test1.git"
+    "url": "git+https://github.com/nikitashpanko/phaser3-test-sound.git"
   },
   "author": "Richard Davey <rdavey@gmail.com> (http://www.photonstorm.com)",
   "license": "MIT",
   "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
   "bugs": {
-    "url": "https://github.com/nikitashpanko/phaser3-test1/issues"
+    "url": "https://github.com/nikitashpanko/phaser3-test-sound/issues"
   },
-  "homepage": "https://nikitashpanko.github.com/phaser3-test1",
+  "homepage": "https://nikitashpanko.github.com/phaser3-test-sound",
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
