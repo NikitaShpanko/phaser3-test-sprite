@@ -1,6 +1,6 @@
 {
-  "width": 600,
-  "height": 600,
+  "width": 450,
+  "height": 450,
   "color": {
     "foreground": "#000000",
     "background": "#ffffff"
@@ -9,12 +9,12 @@
   "text": {
     "fontSize": 24,
     "marginLeft": 10,
-    "marginTop": 50,
+    "marginTop": 10,
     "lineHeight": 50
   },
   "head": {
-    "x": 0,
-    "y": -20,
-    "scale": 0.7
+    "x": 60,
+    "y": 0,
+    "scale": 0.6
   }
 }
