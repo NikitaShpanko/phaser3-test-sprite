@@ -3,5 +3,43 @@
     "KeyFace Lips closed tight.png",
     "KeyFace Lips A not stressed.png",
     "KeyFace Lips A stressed.png"
-  ]
+  ],
+  "lipsA!": [
+    "KeyFace Lips closed tight.png",
+    "KeyFace Lips A not stressed.png",
+    "KeyFace Lips A stressed.png",
+    "KeyFace Lips A strongest.png"
+  ],
+  "lipsE": [
+    "KeyFace Lips closed tight.png",
+    "KeyFace Lips E not stressed.png",
+    "KeyFace Lips E stressed.png"
+  ],
+  "lipsI": [
+    "KeyFace Lips closed tight.png",
+    "KeyFace Lips I not stressed.png",
+    "KeyFace Lips I stressed.png"
+  ],
+  "lipsO": [
+    "KeyFace Lips closed tight.png",
+    "KeyFace Lips O not stressed.png",
+    "KeyFace Lips O stressed.png"
+  ],
+  "lipsU": [
+    "KeyFace Lips closed tight.png",
+    "KeyFace Lips U not stressed.png",
+    "KeyFace Lips U stressed.png"
+  ],
+  "lipsU!": [
+    "KeyFace Lips closed tight.png",
+    "KeyFace Lips U not stressed.png",
+    "KeyFace Lips U stressed.png",
+    "KeyFace Lips U strongest.png"
+  ],
+  "lipsY": [
+    "KeyFace Lips closed tight.png",
+    "KeyFace Lips Y not stressed - DEFAULT.png",
+    "KeyFace Lips Y stressed.png"
+  ],
+  "default": ["KeyFace Lips Y not stressed - DEFAULT.png"]
 }
