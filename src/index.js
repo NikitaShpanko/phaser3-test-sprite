@@ -1,74 +1,65 @@
 import Phaser from 'phaser';
+import lipsPNG from './assets/lips.png';
+import lipsJSON from './assets/lips.json';
+import lipAnim from './lipAnim.json';
+import facePNG from './assets/KeyFace 12.png';
+import faceTestPNG from './assets/KeyFace test 12a.png';
 
 const WIDTH = 600;
 const HEIGHT = 600;
-const NOTES = ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'];
-const COLOR_INACTIVE = 0xffffff;
-const COLOR_ACTIVE = 0xff0000;
-const STRING_LENGTH = 0.8;
-const STRING_THICKNESS = 0.04;
-const FRET_COUNT = 24;
+
+const inputX = document.querySelector('#x');
+const inputY = document.querySelector('#y');
+const inputScale = document.querySelector('#scale');
+let head;
 
 class MyGame extends Phaser.Scene {
   constructor() {
     super();
   }
   preload() {
-    NOTES.map(note => {
-      this.load.audio(
-        note,
-        `https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/acoustic_guitar_steel-mp3/${note}.mp3`,
-      );
-    });
+    this.load.atlas('lips', lipsPNG, lipsJSON);
+    this.load.image('test', faceTestPNG);
+    this.load.image('face', facePNG);
   }
   create() {
-    document
-      .querySelector('body')
-      .insertAdjacentHTML(
-        'beforeend',
-        '<label><input type="checkbox" name="checked"/>Randomize frets</label>',
-      );
-    const chkRandom = document.querySelector('input');
-    const shapes = NOTES.map((note, i) => {
-      const rect = this.add.rectangle(
-        WIDTH / 2,
-        ((NOTES.length - i) * HEIGHT) / (NOTES.length + 1),
-        WIDTH * STRING_LENGTH,
-        HEIGHT * STRING_THICKNESS,
-        COLOR_INACTIVE,
-      );
-      rect.setInteractive();
-      return rect;
+    const test = this.add.image(0, 0, 'test');
+    test.alpha = 0.5;
+    const face = this.add.image(0, 0, 'face');
+    const lips = this.add.sprite(0, 330, 'lips', 'KeyFace Lips Y not stressed - DEFAULT.png');
+    head = this.add.container(WIDTH / 2, HEIGHT / 2, [test, face, lips]);
+    //head.scale = 0.5;
+    // console.log(
+    //   this.anims.generateFrameNames('lips', { frames: lipAnim.lipsA }).map(frame => {
+    //     frame.duration = 40;
+    //     return frame;
+    //   }),
+    // );
+    this.anims.create({
+      key: 'lipsA',
+      frames: this.anims.generateFrameNames('lips', { frames: lipAnim.lipsA }).map((frame, i) => {
+        frame.duration = i === lipAnim.lipsA.length - 1 ? 500 : 1000 / 30;
+        return frame;
+      }),
+      yoyo: true,
+      repeat: -1,
     });
-    const sounds = NOTES.map((note, i) => {
-      const sound = this.sound.add(note);
-      sound.on('complete', () => {
-        shapes[i].fillColor = COLOR_INACTIVE;
-      });
-      return sound;
-    });
-
-    this.input.on('gameobjectover', (p, target) => {
-      if (!p.buttons) return;
-      const i = shapes.indexOf(target);
-      if (i < 0) return;
-      sounds[i].play({ detune: chkRandom.checked ? Phaser.Math.Between(0, FRET_COUNT) * 100 : 0 });
-      target.fillColor = COLOR_ACTIVE;
-    });
-    this.input.on('gameobjectup', (p, target) => {
-      const i = shapes.indexOf(target);
-      if (i < 0) return;
-      sounds[i].stop();
-      target.fillColor = COLOR_INACTIVE;
-    });
+    this.input.on('pointerup', () => lips.play('lipsA'));
+    //lips.play('lipsA');
+  }
+  update() {
+    head.x = WIDTH / 2 + Number(inputX.value);
+    head.y = HEIGHT / 2 + Number(inputY.value);
+    head.scale = Number(inputScale.value) / 100;
   }
 }
 
 const config = {
   type: Phaser.AUTO,
-  parent: 'phaser-example',
+  parent: 'game',
   width: WIDTH,
   height: HEIGHT,
   scene: MyGame,
+  backgroundColor: 0xffffff,
 };
 const game = new Phaser.Game(config);

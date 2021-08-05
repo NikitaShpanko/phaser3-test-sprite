@@ -1,0 +1,335 @@
+{
+	"frames": {
+		"KeyFace Lips A not stressed.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips A stressed.png": {
+			"frame": {
+				"x": 193,
+				"y": 1,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips A strongest.png": {
+			"frame": {
+				"x": 385,
+				"y": 1,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips E not stressed.png": {
+			"frame": {
+				"x": 577,
+				"y": 1,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips E stressed.png": {
+			"frame": {
+				"x": 1,
+				"y": 196,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips I not stressed.png": {
+			"frame": {
+				"x": 193,
+				"y": 196,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips I stressed.png": {
+			"frame": {
+				"x": 385,
+				"y": 196,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips O not stressed.png": {
+			"frame": {
+				"x": 577,
+				"y": 196,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips O stressed.png": {
+			"frame": {
+				"x": 1,
+				"y": 391,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips U not stressed.png": {
+			"frame": {
+				"x": 193,
+				"y": 391,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips U stressed.png": {
+			"frame": {
+				"x": 385,
+				"y": 391,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips U strongest.png": {
+			"frame": {
+				"x": 577,
+				"y": 391,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips Y not stressed - DEFAULT.png": {
+			"frame": {
+				"x": 769,
+				"y": 1,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips Y stressed.png": {
+			"frame": {
+				"x": 769,
+				"y": 196,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips closed tight.png": {
+			"frame": {
+				"x": 769,
+				"y": 391,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		},
+		"KeyFace Lips opening.png": {
+			"frame": {
+				"x": 1,
+				"y": 586,
+				"w": 190,
+				"h": 193
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 190,
+				"h": 193
+			},
+			"sourceSize": {
+				"w": 190,
+				"h": 193
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 960,
+			"h": 780
+		},
+		"scale": "1"
+	}
+}
