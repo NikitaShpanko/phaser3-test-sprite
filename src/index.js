@@ -12,9 +12,6 @@ import behavior from './param/behavior.json';
 
 const MAX_DIST = Phaser.Math.Distance.Between(config.width, config.height, 0, 0) / 2;
 
-// const input = document.querySelector('input');
-// input.value = 10;
-
 class MyGame extends Phaser.Scene {
   constructor() {
     super();
@@ -59,91 +56,39 @@ class MyGame extends Phaser.Scene {
       if (!target.text && !lipAnim[target.text]) return;
       lips.play(target.text);
     });
+
     this.input.on('gameobjectout', (p, target) => {
       target.scale = 1;
     });
 
-    if (config.debug) {
-      const eyeLine = this.add.line(0, headParts.eyes.lineY, 0, 0, face.width, 0, 0xff0000);
-      const lineCenter = this.add.line(0, 0, 0, 0, 0, face.height, 0xff0000);
-      const eyeLeft = this.add.circle(
-        -headParts.eyes.aperture / 2,
-        headParts.eyes.lineY,
-        headParts.eyes.maxRadius,
-      );
-      eyeLeft.isFilled = false;
-      eyeLeft.isStroked = true;
-      eyeLeft.setStrokeStyle(2, 0xff0000);
-
-      const eyeLeftGhost = this.add.circle(
-        -headParts.eyes.aperture / 2,
-        headParts.eyes.lineY,
-        headParts.eyes.maxRadius + headParts.eyes.pupilHeight / 2,
-      );
-      eyeLeftGhost.isFilled = false;
-      eyeLeftGhost.isStroked = true;
-      eyeLeftGhost.setStrokeStyle(2, 0xff0000, 0.7);
-
-      const lineLeft = this.add.line(
-        -headParts.eyes.aperture / 2,
-        headParts.eyes.lineY,
-        0,
-        0,
-        0,
-        headParts.eyes.pupilHeight,
-        0xff0000,
-      );
-      const lineRight = this.add.line(
-        headParts.eyes.aperture / 2,
-        headParts.eyes.lineY,
-        0,
-        0,
-        0,
-        headParts.eyes.pupilHeight,
-        0xff0000,
-      );
-      head.add([eyeLine, lineCenter, lineLeft, eyeLeft, eyeLeftGhost, lineRight]);
-    }
-
-    const lineOfSight = new Phaser.Geom.Line();
-
-    const graphics = this.add.graphics();
     this.input.on('pointermove', pointer => {
-      let angleHead = Phaser.Math.Angle.Between(pointer.x, pointer.y, head.x, head.y);
-      if (angleHead > Math.PI / 4) angleHead = Math.PI / 2 - angleHead;
-      if (angleHead < -Math.PI / 4) angleHead = -Math.PI / 2 - angleHead;
-      if (angleHead > Math.PI / 4) angleHead = Math.PI / 2 - angleHead;
-      head.rotation = angleHead * behavior.turnCoeff;
+      let angleToHead = Phaser.Math.Angle.Between(pointer.x, pointer.y, head.x, head.y);
+      if (angleToHead > Math.PI / 4) angleToHead = Math.PI / 2 - angleToHead;
+      if (angleToHead < -Math.PI / 4) angleToHead = -Math.PI / 2 - angleToHead;
+      if (angleToHead > Math.PI / 4) angleToHead = Math.PI / 2 - angleToHead;
+      head.rotation = angleToHead * behavior.turnCoeff;
 
-      const distHead = Phaser.Math.Distance.Between(pointer.x, pointer.y, head.x, head.y);
-      head.scale = config.head.scale - (1 - distHead / MAX_DIST) * behavior.scaleCoeff;
+      const distToHead = Phaser.Math.Distance.Between(pointer.x, pointer.y, head.x, head.y);
+      head.scale = config.head.scale - (1 - distToHead / MAX_DIST) * behavior.scaleCoeff;
 
       const eyeD = head.scale * headParts.eyes.lineY;
       const eyeX = head.x - eyeD * Math.sin(head.rotation);
       const eyeY = head.y + eyeD * Math.cos(head.rotation);
 
-      const angleEye = Phaser.Math.Angle.Between(pointer.x, pointer.y, eyeX, eyeY) - head.rotation;
-      const distEye = Phaser.Math.Distance.Between(pointer.x, pointer.y, eyeX, eyeY);
-      lineOfSight.x1 = pointer.x;
-      lineOfSight.y1 = pointer.y;
-      lineOfSight.x2 = eyeX;
-      lineOfSight.y2 = eyeY;
+      const angleToEye =
+        Phaser.Math.Angle.Between(pointer.x, pointer.y, eyeX, eyeY) - head.rotation;
+      const distToEye = Phaser.Math.Distance.Between(pointer.x, pointer.y, eyeX, eyeY);
 
-      let distInEye = headParts.eyes.distCoeff * distEye;
+      let distInEye = behavior.eyeDistCoeff * distToEye;
       if (distInEye > headParts.eyes.maxRadius) {
         distInEye = headParts.eyes.maxRadius;
       }
 
-      eyes.x = -distInEye * Math.cos(angleEye);
-      eyes.y = -distInEye * Math.sin(angleEye);
-
-      if (config.debug) {
-        graphics.clear();
-        graphics.strokeLineShape(lineOfSight);
-      }
+      eyes.x = -distInEye * Math.cos(angleToEye);
+      eyes.y = -distInEye * Math.sin(angleToEye);
     });
+
     this.input.on('gameout', () => {
-      if (config.debug) graphics.clear();
       eyes.x = 0;
       eyes.y = headParts.eyes.defaultY;
     });

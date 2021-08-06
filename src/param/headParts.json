@@ -2,10 +2,6 @@
   "eyes": {
     "lineY": -279,
     "defaultY": -6,
-    "aperture": 274,
-    "pupilWidth": 45,
-    "pupilHeight": 60,
-    "distCoeff": 0.15,
     "maxRadius": 45
   },
   "lips": { "y": 270 }
