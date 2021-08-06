@@ -1,5 +1,6 @@
 {
-  "width": 450,
+  "debug": false,
+  "width": 600,
   "height": 450,
   "color": {
     "foreground": "#000000",
@@ -13,7 +14,7 @@
     "lineHeight": 50
   },
   "head": {
-    "x": 60,
+    "x": -15,
     "y": 0,
     "scale": 0.6
   }
