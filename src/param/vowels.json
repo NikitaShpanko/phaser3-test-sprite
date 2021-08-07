@@ -1,0 +1,47 @@
+{
+  "lipsA": {
+    "start": 0.045,
+    "end": 0.33,
+    "loop": false
+  },
+  "lipsA!": {
+    "start": 0.905,
+    "end": 1.265,
+    "loop": false
+  },
+  "lipsE": {
+    "start": 1.79,
+    "end": 2.08,
+    "loop": false
+  },
+  "lipsI": {
+    "start": 2.67,
+    "end": 2.965,
+    "loop": false
+  },
+  "lipsO": {
+    "start": 3.475,
+    "end": 3.79,
+    "loop": false
+  },
+  "lipsU": {
+    "start": 4.31,
+    "end": 4.585,
+    "loop": false
+  },
+  "lipsU!": {
+    "start": 5.19,
+    "end": 5.555,
+    "loop": false
+  },
+  "lipsY": {
+    "start": 5.985,
+    "end": 6.29,
+    "loop": false
+  },
+  "default": {
+    "start": 6.82,
+    "end": 7.56,
+    "loop": false
+  }
+}

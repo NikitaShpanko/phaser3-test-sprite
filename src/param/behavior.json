@@ -1,5 +1,6 @@
 {
   "eyeDistCoeff": 0.15,
   "turnCoeff": 0.15,
-  "scaleCoeff": 0.1
+  "scaleCoeff": 0.1,
+  "soundDelay": 10
 }
